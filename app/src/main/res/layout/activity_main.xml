@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusText"
+        android:layout_centerHorizontal="true"
+        android:text="Status:"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusValue"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/statusText"
+        android:text="Disconnected"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/connectButton"
+        android:layout_below="@+id/statusValue"
+        android:layout_centerHorizontal="true"
+        android:text="Connect"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/connectButton"
+        android:id="@+id/lineChart"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lineChart"
+        android:id="@+id/deltaText"
+        android:layout_toStartOf="@+id/inputDelta"
+        android:layout_alignBaseline="@+id/inputDelta"
+        android:text="Reading delta:"/>
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/lineChart"
+        android:layout_margin="10dp"
+        android:id="@+id/inputDelta"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/deltaButton"
+        android:layout_toEndOf="@+id/inputDelta"
+        android:layout_alignBaseline="@+id/inputDelta"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/deltaButton"
+        android:layout_marginTop="50dp"
+        android:id="@+id/switchText"
+        android:text="Led Status:"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/switchText"
+        android:id="@+id/ledSwitch"
+        android:layout_margin="20dp"/>
+</RelativeLayout>
+
